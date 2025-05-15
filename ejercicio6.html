@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador de huevo</title>
+</head>
+<body>
+    <button id="iniciar">Iniciar (3 segundos)</button>
+    <p id="mensaje"></p>
+    <script>
+        document.getElementById("iniciar").addEventListener("click", () => {
+        document.getElementById("mensaje").textContent = "¡Huevo cocinándose!";
+        setTimeout(() => {
+        document.getElementById("mensaje").textContent = "¡Huevo listo! 🍳";
+        }, 3000); // 3 segundos
+        });
+    </script>
+</body>
+</html>

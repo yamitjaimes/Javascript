@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regar plantas</title>
+</head>
+<body>
+    <div id="huerto" style="display:grid;grid-template-columns:repeat(3,100px);gap:10px;"></div>
+    <button id="regar">Regar plantas</button>
+    <script>let plantas = ["🍅", "🌽", "🥕", "🍓", "🥬", "🍆"];
+    let huertoHTML = "";
+    plantas.forEach(planta => {
+    huertoHTML += `<div style="height:100px;background:#e3f2fd;display:flex;justify-content:center;align-items:center;font-size:30px;">${planta}</div>`;
+    });
+    document.getElementById("huerto").innerHTML = huertoHTML;
+    document.getElementById("regar").addEventListener("click", () => {
+    document.querySelectorAll("#huerto div").forEach(planta => {
+        planta.style.background = "#a5d6a7"; // Cambia a verde como agua
+    });
+    });</script>
+</body>
+</html>

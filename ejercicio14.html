@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrastra la caja</title>
+</head>
+<body>
+    <div id="caja" style="width:100px;height:100px;background:red;position:absolute;"></div>
+    <script>
+        let caja = document.getElementById("caja");
+    caja.addEventListener("mousedown", (e) => {
+    let shiftX = e.clientX - caja.getBoundingClientRect().left;
+    let shiftY = e.clientY - caja.getBoundingClientRect().top;
+    function mover(e) {
+        caja.style.left = e.pageX - shiftX + "px";
+        caja.style.top = e.pageY - shiftY + "px";
+    }
+    document.addEventListener("mousemove", mover);
+    document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", mover);
+    });
+});
+    </script>
+</body>
+</html>

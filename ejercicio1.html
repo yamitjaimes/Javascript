@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ejercicio1.js"></script>
+    <title>reloj</title>
+</head>
+<body>
+    <script>
+        function actualizarReloj() {
+    let ahora = new Date();
+    document.getElementById("reloj").innerHTML = ahora.toLocaleTimeString();
+    }
+    setInterval(actualizarReloj, 1000); // Actualiza cada segundo
+    actualizarReloj();
+    </script>
+    <div id="reloj"></div>
+</body>
+</html>

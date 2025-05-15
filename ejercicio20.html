@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nave</title>
+</head>
+<body>
+    <div id="nave" style="position:absolute;font-size:30px;">🚀</div>
+    <script>
+        let nave = document.getElementById("nave");
+let posX = 0;
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") posX += 10;
+    if (e.key === "ArrowLeft") posX -= 10;
+    nave.style.left = posX + "px";
+});
+    </script>
+</body>
+</html>

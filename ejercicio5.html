@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina</title>
+</head>
+<body>
+    <input id="numero" type="number" placeholder="Adivina...">
+    <button id="adivinar">Adivinar</button>
+    <p id="resultado"></p>
+    <script>
+        let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("adivinar").addEventListener("click", () => {
+    let intento = parseInt(document.getElementById("numero").value);
+    let resultado = document.getElementById("resultado");
+    if (intento === numeroSecreto) {
+        resultado.textContent = "¡Ganaste! 🎉";
+    } else {
+        resultado.textContent = "¡Oops! Intenta otra vez.";
+    }
+    });
+    </script>
+</body>
+</html>

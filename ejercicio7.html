@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <input id="num1" type="number" placeholder="Número 1">
+    <input id="num2" type="number" placeholder="Número 2">
+    <button id="sumar">Sumar</button>
+    <p id="resultado">Resultado: </p>
+    <script>
+        document.getElementById("sumar").addEventListener("click", () => {
+    let num1 = parseFloat(document.getElementById("num1").value);
+    let num2 = parseFloat(document.getElementById("num2").value);
+    document.getElementById("resultado").textContent = "Resultado: " + (num1 + num2);
+    });
+    </script>
+</body>
+</html>

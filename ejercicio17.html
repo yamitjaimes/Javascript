@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<body>
+    <input id="pokemonInput" placeholder="Escribe un Pokémon (ej: pikachu)">
+    <button id="buscar">Buscar</button>
+    <div id="pokemonInfo"></div>
+    <script>
+        document.getElementById("buscar").addEventListener("click", async () => {
+        let nombre = document.getElementById("pokemonInput").value.toLowerCase();
+        let respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
+        if (respuesta.ok) {
+        let pokemon = await respuesta.json();
+        document.getElementById("pokemonInfo").innerHTML = `
+            <h3>${pokemon.name.toUpperCase()}</h3>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+        `;
+        } else {
+        document.getElementById("pokemonInfo").innerHTML = "¡Pokémon no encontrado!";
+        }
+        });
+    </script>
+</body>
+</html>

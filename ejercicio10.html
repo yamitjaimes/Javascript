@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera</title>
+</head>
+<body>
+    <div id="carril1" style="height:50px;background:#eee;margin:10px;"></div>
+    <div id="carril2" style="height:50px;background:#eee;margin:10px;"></div>
+    <button id="iniciarCarrera">¡Correr!</button>
+    <script>
+        document.getElementById("iniciarCarrera").addEventListener("click", () => {
+    let carril1 = document.getElementById("carril1");
+    let carril2 = document.getElementById("carril2");
+    let pos1 = 0, pos2 = 0;
+    let intervalo = setInterval(() => {
+        pos1 += Math.random() * 5;
+        pos2 += Math.random() * 5;
+        carril1.style.width = pos1 + "px";
+        carril2.style.width = pos2 + "px";
+        if (pos1 > 300 || pos2 > 300) {
+            clearInterval(intervalo);
+            alert(pos1 > pos2 ? "¡Coche 1 gana!" : "¡Coche 2 gana!");
+        }
+    }, 100);
+});
+    </script>
+</body>
+</html>

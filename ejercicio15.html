@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encuentra los pares</title>
+</head>
+<body>
+    <div id="juegoMemoria" style="display:grid;grid-template-columns:repeat(4,50px);gap:10px;"></div>
+    <script>
+        let colores = ["red", "blue", "green", "yellow", "purple", "orange"];
+let tablero = [...colores, ...colores].sort(() => Math.random() - 0.5);
+let tableroHTML = "";
+tablero.forEach((color, i) => {
+    tableroHTML += `<div data-color="${color}" style="width:50px;height:50px;background:gray;cursor:pointer;"></div>`;
+});
+document.getElementById("juegoMemoria").innerHTML = tableroHTML;
+// Lógica para voltear tarjetas y encontrar pares (ejercicio avanzado)
+    </script>
+</body>
+</html>

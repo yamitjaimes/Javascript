@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reproducri sonido</title>
+</head>
+<body>
+    <button id="sonido">¡Píp!</button>
+    <audio id="audio" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
+    <script>document.getElementById("sonido").addEventListener("click", () => {
+    document.getElementById("audio").play();
+    });</script>
+</body>
+</html>

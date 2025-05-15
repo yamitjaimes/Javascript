@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+</head>
+<body>
+    <button id="clima">¿Qué clima hace hoy?</button>
+    <p id="resultadoClima"></p>
+    <script>
+        document.getElementById("clima").addEventListener("click", () => {
+        let climas = ["☀️ Soleado", "🌧️ Lluvioso", "⛄ Nevando", "🌤️ Nublado"];
+        let climaAleatorio = climas[Math.floor(Math.random() * climas.length)];
+        document.getElementById("resultadoClima").textContent = climaAleatorio;
+        });
+    </script>
+</body>
+</html>

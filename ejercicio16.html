@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Re Mi</title>
+</head>
+<body>
+    <div id="piano">
+    <button data-nota="Do" style="background:white;width:40px;height:120px;">Do</button>
+    <button data-nota="Re" style="background:white;width:40px;height:120px;">Re</button>
+    <button data-nota="Mi" style="background:white;width:40px;height:120px;">Mi</button>
+    </div>
+        <audio id="audioDo" src="https://www.soundjay.com/music/sounds/piano-do-01.mp3"></audio>
+        <audio id="audioRe" src="https://www.soundjay.com/music/sounds/piano-re-01.mp3"></audio>
+        <audio id="audioMi" src="https://www.soundjay.com/music/sounds/piano-mi-01.mp3"></audio>
+
+    <script>
+        document.querySelectorAll("#piano button").forEach(boton => {
+        boton.addEventListener("click", () => {
+        let nota = boton.getAttribute("data-nota");
+        document.getElementById(`audio${nota}`).play();
+            });
+        });
+    </script>
+</body>
+</html>

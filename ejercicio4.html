@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de color</title>
+</head>
+<body>
+    <button id="color">Cambiar color</button>
+    <script>
+        document.getElementById("color").addEventListener("click", () => {
+        let colores = ["#FF5733", "#33FF57", "#3357FF"];
+        let colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+        document.body.style.backgroundColor = colorAleatorio;
+        });
+    </script>
+</body>
+</html>

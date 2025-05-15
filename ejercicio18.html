@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+</head>
+<body>
+    <p id="palabraOculta">_ _ _ _ _</p>
+    <input id="letraInput" maxlength="1" placeholder="Adivina una letra">
+    <button id="adivinarLetra">Adivinar</button>
+    <p id="intentos">Intentos restantes: 5</p>
+    <script>let palabra = "JESUS";
+    let letrasAdivinadas = [];
+    let intentos = 5;
+    document.getElementById("adivinarLetra").addEventListener("click", () => {
+    let letra = document.getElementById("letraInput").value.toUpperCase();
+    if (palabra.includes(letra)) {
+        letrasAdivinadas.push(letra);
+    } else {
+        intentos--;
+    }
+    // Actualiza la pantalla
+    let palabraOculta = palabra.split("").map(l => letrasAdivinadas.includes(l) ? l : "_").join(" ");
+    document.getElementById("palabraOculta").textContent = palabraOculta;
+    document.getElementById("intentos").textContent = `Intentos restantes: ${intentos}`;
+    });</script>
+</body>
+</html>

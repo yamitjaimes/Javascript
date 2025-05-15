@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+</head>
+<body>
+    <img id="imagen" src="imagen1.jpg" style="width:200px;">
+    <button id="anterior">Anterior</button>
+    <button id="siguiente">Siguiente</button>
+    <script>
+        let imagenes = ["imagen1.jpg", "imagen2.jpg", "imagen3.jpg"];
+        let indice = 0;
+        document.getElementById("siguiente").addEventListener("click", () => {
+        indice = (indice + 1) % imagenes.length;
+        document.getElementById("imagen").src = imagenes[indice];
+        });
+        document.getElementById("anterior").addEventListener("click", () => {
+        indice = (indice - 1 + imagenes.length) % imagenes.length;
+        document.getElementById("imagen").src = imagenes[indice];
+        });
+    </script>
+</body>
+</html>
